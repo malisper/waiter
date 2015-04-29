@@ -1,5 +1,7 @@
 (in-package :waiter)
 
+;; Unfortunately this does not modify the result of the iterate
+;; expression, but it will have to do for now.
 (defmacro collect (expr &optional (into 'into) (var (gensym)))
   (assert (equal into 'into))
   (with-unique-names (head tail)
