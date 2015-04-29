@@ -22,5 +22,4 @@
      (terminate)))
 
 (defmacro while (expr)
-  `(until (not ,expr)
-     ,expr))
+  `(until (not ,expr)))
