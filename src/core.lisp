@@ -19,7 +19,7 @@
            ,@body)))
 
 (defun nconc1 (x xs)
-  "Nconcs the single element X onto the end XS."
+  "Nconcs the single element X onto the end of XS."
   (nconc xs (list x)))
 
 (defun orf (&rest fns)

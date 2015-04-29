@@ -18,4 +18,9 @@
           (incf ,var)))
 
 (defmacro until (expr)
-  `(while (not ,expr)))
+  `(when ,expr
+     (terminate)))
+
+(defmacro while (expr)
+  `(until (not ,expr)
+     ,expr))

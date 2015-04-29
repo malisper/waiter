@@ -7,5 +7,5 @@
     (call-next-method))
   form)
 
-(defmethod transfer-data progn (data (form terminate-mixin))
+(defmethod transfer-data progn (data (form terminate-form))
   (setf (end-tag-of form) (end-tag-of data)))

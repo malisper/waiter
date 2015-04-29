@@ -8,4 +8,3 @@
              collect `(map-ast visitor (,accessor form)))))
 
 (defmap with-form val-of)
-(defmap while-form cond-of)
