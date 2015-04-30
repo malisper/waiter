@@ -8,3 +8,5 @@
              collect `(map-ast visitor (,accessor form)))))
 
 (defmap with-form val-of)
+(defmap finally-form body-of)
+(defmap initially-form body-of)

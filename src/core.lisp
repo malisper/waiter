@@ -18,9 +18,9 @@
            (declare (ignorable ,form ,parent ,lexenv))
            ,@body)))
 
-(defun nconc1 (x xs)
-  "Nconcs the single element X onto the end of XS."
-  (nconc xs (list x)))
+(defun append1 (x xs)
+  "Appends the single element X onto the end of XS."
+  (append xs (list x)))
 
 (defun orf (&rest fns)
   "Returns the result of FNS or'd together. They are called lazily."
@@ -31,7 +31,7 @@
 (defun add-block (&optional condition)
   "Invoke the add-block restart."
   (declare (ignore condition))
-  (invoke-restart 'add-block))
+  (invoke-restart 'cl-walker::add-block))
 
 (defun walk-iter-forms (exps)
   "Walk over the iter forms."
@@ -72,9 +72,7 @@
          :initform *current-iter*)
    (vars :accessor vars-of
          :initarg :vars
-         ;; By having a list here, it is possible to nconc onto the
-         ;; end of it.
-         :initform (list (gensym "IGNORE")))
+         :initform '())
    (result :accessor result-of
            :initarg :result
            :initform '())

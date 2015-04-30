@@ -10,3 +10,9 @@
 (defclass with-form (iter-form)
   ((var :accessor var-of :initarg :var)
    (val :accessor val-of :initarg :val :initform nil)))
+
+(defclass finally-form (iter-form)
+  ((body :accessor body-of :initarg :body)))
+
+(defclass initially-form (iter-form)
+  ((body :accessor body-of :initarg :body)))
